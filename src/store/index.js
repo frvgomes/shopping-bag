@@ -20,6 +20,7 @@ export default createStore({
     removeFromBag(state, productId) {
       const updatedBag = state.productsInBag.filter(item => productId !== item.id);
       state.productsInBag = updatedBag
+      localStorage.setItem("productsInBag", JSON.stringify(state.productsInBag))
     }
   },
   actions: {
